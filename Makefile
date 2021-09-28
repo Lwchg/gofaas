@@ -8,7 +8,7 @@ clean:
 	rm -rf $(wildcard web/handlers/*/node_modules)
 
 deploy: BUCKET = pkgs-$(shell aws sts get-caller-identity --output text --query 'Account')-$(AWS_DEFAULT_REGION)
-deploy: PARAMS ?= =
+deploy: PARAMS ?= ""
 deploy: handlers
 	@aws s3api head-bucket --bucket $(BUCKET) || aws s3 mb s3://$(BUCKET) --region $(AWS_DEFAULT_REGION)
 	sam package --output-template-file out.yml --s3-bucket $(BUCKET) --template-file template.yml
@@ -27,7 +27,7 @@ deploy-static: web/static/index.html
 dev-debug:
 	make clean
 	GCFLAGS="-N -l" make -j handlers
-	GOARCH=amd64 GOOS=linux go build -o /tmp/delve/dlv github.com/derekparker/delve/cmd/dlv
+	GOARCH=amd64 GOOS=linux go build -o /tmp/delve/dlv github.com/go-delve/delve
 	sam local start-api -d 5986 --debugger-path /tmp/delve -n env.json -s web/static
 
 dev:

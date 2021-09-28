@@ -60,7 +60,7 @@ package main
 
 import (
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/nzoschke/gofaas"
+	"github.com/Lwchg/gofaas"
 )
 
 func main() {

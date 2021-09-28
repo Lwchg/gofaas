@@ -160,6 +160,7 @@ Resources:
     Condition: ApiDomainNameSpecified
     Properties:
       DomainName: !Ref ApiDomainName
+      ValidationMethod: DNS
     Type: AWS::CertificateManager::Certificate
 
   ApiGatewayDomainName:
@@ -391,7 +392,7 @@ Resources:
       FunctionName: !Sub ${AWS::StackName}-WebAuthFunction
       Handler: index.handler
       Role: !GetAtt WebAuthFunctionRole.Arn
-      Runtime: nodejs6.10
+      Runtime: nodejs14.x
     Type: AWS::Serverless::Function
 
   WebAuthFunctionRole:
@@ -493,6 +494,7 @@ Resources:
     Condition: WebDomainNameSpecified
     Properties:
       DomainName: !Ref WebDomainName
+      ValidationMethod: DNS
     Type: AWS::CertificateManager::Certificate
 
   WebDistribution:

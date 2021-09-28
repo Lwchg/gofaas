@@ -1,8 +1,8 @@
 package main
 
 import (
+	"github.com/Lwchg/gofaas"
 	"github.com/aws/aws-lambda-go/lambda"
-	"github.com/nzoschke/gofaas"
 )
 
 func main() {

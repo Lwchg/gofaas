@@ -149,10 +149,10 @@ $ aws iam get-user
 
 ### Get the App
 
-We start by getting and testing the `github.com/nzoschke/gofaas`.
+We start by getting and testing the `github.com/Lwchg/gofaas`.
 
 ```console
-$ git clone https://github.com/nzoschke/gofaas.git ~/dev/gofaas
+$ git clone https://github.com/Lwchg/gofaas.git ~/dev/gofaas
 $ cd ~/dev/gofaas
 
 $ make test
@@ -164,7 +164,7 @@ go: finding github.com/aws/aws-sdk-go v1.15.49
 === RUN   TestUserCreate
 --- PASS: TestUserCreate (0.00s)
 ...
-ok     github.com/nzoschke/gofaas      0.014s
+ok     github.com/Lwchg/gofaas      0.014s
 PASS
 ```
 
@@ -281,7 +281,7 @@ Check out [the docs folder](docs/) where each component is explained in more det
 
 ## Contributing
 
-Find a bug or see a way to improve the project? [Open an issue](https://github.com/nzoschke/gofaas/issues).
+Find a bug or see a way to improve the project? [Open an issue](https://github.com/Lwchg/gofaas/issues).
 
 ## License
 
